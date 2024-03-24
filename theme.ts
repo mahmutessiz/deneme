@@ -18,6 +18,12 @@ export const lightTheme = {
       fontSize: 20,
       fontWeight: 'bold',
     },
+    buttonStyle: {
+      backgroundColor: colors.azureRadiance,
+      color: colors.white,
+      padding: 10,
+      borderRadius: 5,
+    },
 
     separator: {
       height: 1,

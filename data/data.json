@@ -1,0 +1,24 @@
+{
+    "task1": {
+      "id": "001",
+      "title": "Buy groceries",
+      "description": "Buy milk, eggs, and bread from the supermarket",
+      "dueDate": "2024-03-05",
+      "status": "Incomplete"
+    },
+    "task2": {
+      "id": "002",
+      "title": "Finish report",
+      "description": "Complete the annual financial report",
+      "dueDate": "2024-03-10",
+      "status": "In progress"
+    },
+    "task3": {
+      "id": "003",
+      "title": "Plan vacation",
+      "description": "Book flights and accommodation for summer vacation",
+      "dueDate": "2024-03-15",
+      "status": "Not started"
+    }
+  }
+  

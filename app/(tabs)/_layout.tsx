@@ -13,27 +13,34 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
-  const { styles } = useStyles(stylesheet);
+  //const { styles } = useStyles(stylesheet);
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: 'black',
+        headerStatusBarHeight: 20,
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
+          tabBarActiveBackgroundColor: 'green',
+          tabBarActiveTintColor: 'black',
+          headerTintColor: 'black',
+          tabBarIcon: ({ color }) => <TabBarIcon name="rocket" color={color} />,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          headerLeft: () => (
             <Link href="/modal" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
-                    name="info-circle"
+                    name="bars"
                     size={25}
-                    color="gray"
-                    style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
+                    color="black"
+                    style={[{ marginLeft: 10 }, { opacity: pressed ? 0.5 : 1 }]}
                   />
                 )}
               </Pressable>
@@ -45,7 +52,27 @@ export default function TabLayout() {
         name="two"
         options={{
           title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          tabBarActiveTintColor: 'black',
+          tabBarActiveBackgroundColor: 'yellow',
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="three"
+        options={{
+          title: 'Tab Three',
+          headerTitleAlign: 'center',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          tabBarActiveTintColor: 'white',
+          tabBarActiveBackgroundColor: 'blue',
+          tabBarIcon: ({ color }) => <TabBarIcon name="check" color={color} />,
         }}
       />
     </Tabs>
