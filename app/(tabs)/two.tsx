@@ -11,9 +11,16 @@ export default function TabTwoScreen() {
   return (
     <View style={theme.components.container}>
       <BlurView
-        tint="light"
-        intensity={90}
-        style={{ position: 'absolute', top: 50, zIndex: 1, padding: 10 }}>
+        experimentalBlurMethod="dimezisBlurView"
+        tint="dark"
+        intensity={30}
+        style={{
+          position: 'absolute',
+          top: 50,
+          zIndex: 1,
+          padding: 10,
+          backgroundColor: 'rgba(186, 44, 118, 0.2)',
+        }}>
         <Text style={theme.components.title}>Status: In Progress</Text>
       </BlurView>
       <Image
