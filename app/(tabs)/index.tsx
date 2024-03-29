@@ -12,13 +12,14 @@ export default function TabOneScreen() {
         <Text style={theme.components.title}>Achivements</Text>
       </View>
       <TaskSelect />
-      <View style={styles.container}>
+
+      <View style={[styles.container, { width: '100%', height: 200, opacity: 0.5 }]}>
         <Image
           key="blurryImage"
-          source={{ uri: 'https://picsum.photos/500/300' }}
+          source={{ uri: 'https://picsum.photos/1920/1080' }}
           style={styles.absolute}
         />
-        <Text style={styles.absolute}>Hi, I am some blurred text</Text>
+        <Text style={{ color: 'white' }}>Hi, I am some blurred text</Text>
         {/* in terms of positioning and zIndex-ing everything before the BlurView will be blurred */}
         <BlurView
           style={styles.absolute}

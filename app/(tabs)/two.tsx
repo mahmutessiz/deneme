@@ -1,4 +1,5 @@
-import { Text, View, FlatList, StyleSheet } from 'react-native';
+import { BlurView } from 'expo-blur';
+import { Text, View, FlatList, StyleSheet, Image } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 
 import data from '../../data/data.json';
@@ -9,7 +10,16 @@ export default function TabTwoScreen() {
 
   return (
     <View style={theme.components.container}>
-      <Text style={theme.components.title}>Status: In Progress</Text>
+      <BlurView
+        tint="light"
+        intensity={90}
+        style={{ position: 'absolute', top: 50, zIndex: 1, padding: 10 }}>
+        <Text style={theme.components.title}>Status: In Progress</Text>
+      </BlurView>
+      <Image
+        source={{ uri: 'https://picsum.photos/200/300' }}
+        style={{ width: '100%', height: 200 }}
+      />
       <FlatList
         style={styles.container}
         data={tasksArray}
