@@ -62,6 +62,14 @@ export default function TabOneScreen() {
         onPress={() => ToastAndroid.show('Task Completed. Good Job! 🥸', ToastAndroid.SHORT)}
       />
       <View style={theme.components.separator} />
+
+      <Button
+        title="Confetti"
+        color="red"
+        accessibilityLabel="Learn more about this purple button"
+        onPress={() => alert('Lottie sucks!')}
+      />
+      <View style={theme.components.separator} />
     </View>
   );
 }
