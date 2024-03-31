@@ -1,6 +1,6 @@
 import { BlurView } from '@react-native-community/blur';
 import TaskSelect from 'components/taskSelect';
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 export default function TabOneScreen() {

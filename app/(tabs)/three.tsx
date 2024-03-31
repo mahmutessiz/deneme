@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, Text, View, ToastAndroid, Button } from 'react-native';
 import { MMKV } from 'react-native-mmkv';
 import { useStyles } from 'react-native-unistyles';
 
@@ -55,6 +55,13 @@ export default function TabOneScreen() {
         <Text style={theme.components.buttonStyle}>alert</Text>
       </Pressable>
       <Notify />
+      <Button
+        title="Show Toast"
+        color="red"
+        accessibilityLabel="Learn more about this purple button"
+        onPress={() => ToastAndroid.show('Task Completed. Good Job! 🥸', ToastAndroid.SHORT)}
+      />
+      <View style={theme.components.separator} />
     </View>
   );
 }
