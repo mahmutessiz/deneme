@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Pressable, Text, View, ToastAndroid, Button } from 'react-native';
 import { MMKV } from 'react-native-mmkv';
+import { OpenDetails } from 'react-native-rn-simple-modal';
 import { useStyles } from 'react-native-unistyles';
 
 // import EditScreenInfo from '../../components/edit-screen-info';
@@ -46,7 +48,7 @@ export default function TabOneScreen() {
   };
 
   const { theme } = useStyles();
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <View style={theme.components.container}>
       <Text style={theme.components.title}>Completed tasks</Text>
@@ -70,6 +72,24 @@ export default function TabOneScreen() {
         onPress={() => alert('Lottie sucks!')}
       />
       <View style={theme.components.separator} />
+      <Button
+        title="Toggle Open Details"
+        color="teal"
+        accessibilityLabel="Learn more about this purple button"
+        onPress={() => setIsOpen(!isOpen)}
+      />
+      <View style={theme.components.separator} />
+      <OpenDetails
+        title="Open Details"
+        details="lorem ipsum dolor sit amet consectetur adipiscing elit."
+        bgColor="teal"
+        closeBtnBgColor="red"
+        closeBtnColor="white"
+        detailsColor="white"
+        titleColor="white"
+        isOpen={isOpen}
+        onToggle={() => setIsOpen(!isOpen)}
+      />
     </View>
   );
 }
