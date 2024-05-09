@@ -4,8 +4,10 @@ import { MMKV } from 'react-native-mmkv';
 import { OpenDetails } from 'react-native-rn-simple-modal';
 import { useStyles } from 'react-native-unistyles';
 
-// import EditScreenInfo from '../../components/edit-screen-info';
 import Notify from '~/components/notify';
+import i18n from '~/locales/i18';
+
+// import EditScreenInfo from '../../components/edit-screen-info';
 
 export default function TabOneScreen() {
   const storage2 = new MMKV({
@@ -64,9 +66,14 @@ export default function TabOneScreen() {
         onPress={() => ToastAndroid.show('Task Completed. Good Job! 🥸', ToastAndroid.SHORT)}
       />
       <View style={theme.components.separator} />
-
       <Button
-        title="Confetti"
+        title="Toggle locale"
+        color="teal"
+        accessibilityLabel="Learn more about this purple button"
+        onPress={() => console.log(i18n.locale)}
+      />
+      <Button
+        title={i18n.t('welcome')}
         color="red"
         accessibilityLabel="Learn more about this purple button"
         onPress={() => alert('Lottie sucks!')}
