@@ -6,7 +6,6 @@ import { useStyles } from 'react-native-unistyles';
 
 import Notify from '~/components/notify';
 import i18n from '~/locales/i18';
-
 // import EditScreenInfo from '../../components/edit-screen-info';
 
 export default function TabOneScreen() {
@@ -52,44 +51,47 @@ export default function TabOneScreen() {
   const { theme } = useStyles();
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <View style={theme.components.container}>
-      <Text style={theme.components.title}>Completed tasks</Text>
+    <>
+      <View style={theme.components.container}>
+        <Text style={theme.components.title}>Completed tasks</Text>
 
-      <Pressable onPress={() => getAndSet(saveObject)}>
-        <Text style={theme.components.buttonStyle}>alert</Text>
-      </Pressable>
-      <Notify />
-      <Button
-        title="Show Toast"
-        color="red"
-        accessibilityLabel="Learn more about this purple button"
-        onPress={() => ToastAndroid.show('Task Completed. Good Job! 🥸', ToastAndroid.SHORT)}
-      />
-      <View style={theme.components.separator} />
-      <Button
-        title="Toggle locale"
-        color="teal"
-        accessibilityLabel="Learn more about this purple button"
-        onPress={() => console.log(i18n.locale)}
-      />
-      <Button
-        title={i18n.t('welcome')}
-        color="red"
-        accessibilityLabel="Learn more about this purple button"
-        onPress={() => alert('Lottie sucks!')}
-      />
-      <View style={theme.components.separator} />
-      <Button
-        title="Toggle Open Details"
-        color="teal"
-        accessibilityLabel="Learn more about this purple button"
-        onPress={() => setIsOpen(!isOpen)}
-      />
-      <View style={theme.components.separator} />
+        <Pressable onPress={() => getAndSet(saveObject)}>
+          <Text style={theme.components.buttonStyle}>alert</Text>
+        </Pressable>
+        <Notify />
+        <Button
+          title="Show Toast"
+          color="red"
+          accessibilityLabel="Learn more about this purple button"
+          onPress={() => ToastAndroid.show('Task Completed. Good Job! 🥸', ToastAndroid.SHORT)}
+        />
+        <View style={theme.components.separator} />
+        <Button
+          title="Toggle locale"
+          color="teal"
+          accessibilityLabel="Learn more about this purple button"
+          onPress={() => console.log(i18n.locale)}
+        />
+        <Button
+          title={i18n.t('welcome')}
+          color="red"
+          accessibilityLabel="Learn more about this purple button"
+          onPress={() => alert('Lottie sucks!')}
+        />
+        <View style={theme.components.separator} />
+        <Button
+          title="Toggle Open Details"
+          color="teal"
+          accessibilityLabel="Learn more about this purple button"
+          onPress={() => setIsOpen(!isOpen)}
+        />
+        <View style={theme.components.separator} />
+      </View>
       <OpenDetails
         title="Open Details"
         details="lorem ipsum dolor sit amet consectetur adipiscing elit."
-        bgColor="teal"
+        bgLayerColor="rgba(0, 0, 0, 0.5)"
+        popupBgColor="red"
         closeBtnBgColor="red"
         closeBtnColor="white"
         detailsColor="white"
@@ -97,6 +99,6 @@ export default function TabOneScreen() {
         isOpen={isOpen}
         onToggle={() => setIsOpen(!isOpen)}
       />
-    </View>
+    </>
   );
 }
