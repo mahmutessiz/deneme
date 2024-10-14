@@ -51,9 +51,11 @@ export default function TabOneScreen() {
   const { theme } = useStyles();
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <>
+    <View style={{ flex: 1 }}>
       <View style={theme.components.container}>
-        <Text style={theme.components.title}>Completed tasks</Text>
+        <Text style={{ fontFamily: 'SpaceGrotesk-Medium', fontSize: 20, color: 'skyblue' }}>
+          Completed tasks
+        </Text>
 
         <Pressable onPress={() => getAndSet(saveObject)}>
           <Text style={theme.components.buttonStyle}>alert</Text>
@@ -99,6 +101,6 @@ export default function TabOneScreen() {
         isOpen={isOpen}
         onToggle={() => setIsOpen(!isOpen)}
       />
-    </>
+    </View>
   );
 }
