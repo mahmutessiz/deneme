@@ -93,8 +93,8 @@ export default function ModalScreen() {
           1. Start 2. Basics 3. Basics Mastery 4. Mastery 5. End
         </Text>
       </View>
-      <CounterTracker />
-      <Button title="start" color="teal" onPress={() => startTimerNotification(() => '0:00')} />
+      {/* <CounterTracker /> */}
+      <Button title="start" color="teal" onPress={() => startTimerNotification()} />
       <Button title="stop" color="red" onPress={() => stopTimerNotification()} />
     </View>
   );

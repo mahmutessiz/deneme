@@ -121,7 +121,7 @@ export async function startTimerNotification() {
     await updateNotificationContent();
 
     // Update notification content every second
-    notificationInterval = setInterval(updateNotificationContent, 1000);
+    notificationInterval = setInterval(updateNotificationContent, 10000);
   } catch (error) {
     console.error('Error starting timer notification:', error);
   }
