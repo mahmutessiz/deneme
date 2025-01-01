@@ -1,7 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, Text, View } from 'react-native';
+import { Button, Platform, Text, View } from 'react-native';
 import { LineChart } from 'react-native-gifted-charts';
 import { useStyles } from 'react-native-unistyles';
+
+import { startTimerNotification, stopTimerNotification } from '../components/backgroundTimer';
+
+import CounterTracker from '~/components/tryNotCounter';
 
 export default function ModalScreen() {
   const data = [
@@ -89,6 +93,9 @@ export default function ModalScreen() {
           1. Start 2. Basics 3. Basics Mastery 4. Mastery 5. End
         </Text>
       </View>
+      <CounterTracker />
+      <Button title="start" color="teal" onPress={() => startTimerNotification(() => '0:00')} />
+      <Button title="stop" color="red" onPress={() => stopTimerNotification()} />
     </View>
   );
 }
